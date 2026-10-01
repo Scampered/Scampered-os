@@ -1,0 +1,7 @@
+build/
+iso/
+isofiles/
+rootfs/
+*.iso
+*.img
+qemu.log
