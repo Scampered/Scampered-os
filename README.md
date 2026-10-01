@@ -1,22 +1,22 @@
 # SCAMPEREDOS
 
-A small x86 operating system built from scratch in C and NASM assembly — custom bootloader, a multiboot-compliant kernel, a FAT12 filesystem driver, and a simple text-mode terminal shell.
+A small x86 operating system built from scratch in C and NASM assembly: custom bootloader, a multiboot-compliant kernel, a FAT12 filesystem driver, and a simple text-mode terminal shell.
 
 ## What it does
 
 - Boots via GRUB (multiboot) into a 32-bit protected-mode kernel
-- Loads a FAT12 disk image (`rootfs.img`) as a GRUB module and mounts it as an in-memory ("RAM disk") filesystem — no BIOS disk I/O
-- Draws a VGA text-mode taskbar with three tabs — **Desktop**, **Terminal**, **Shutdown** — navigated with the Left/Right arrow keys
+- Loads a FAT12 disk image (`rootfs.img`) as a GRUB module and mounts it as an in-memory ("RAM disk") filesystem, no BIOS disk I/O
+- Draws a VGA text-mode taskbar with three tabs, **Desktop**, **Terminal**, **Shutdown**, navigated with the Left/Right arrow keys
 - The Terminal tab runs a tiny shell with its own in-memory file table, supporting:
-  - `write <file>` — create/append a file, line by line, until `.stop`
-  - `read <file>` — print a file's contents
-  - `delete <file>` — remove a file
-  - `ls` — list files
-  - `shutdown` — halt the CPU
+  - `write <file>`: create/append a file, line by line, until `.stop`
+  - `read <file>`: print a file's contents
+  - `delete <file>`: remove a file
+  - `ls`: list files
+  - `shutdown`: halt the CPU
 
 ## Prerequisites
 
-This builds on Linux (or WSL on Windows — plain `-m32` GCC/`grub-mkrescue` aren't readily available on native Windows):
+This builds on Linux (or WSL on Windows, since plain `-m32` GCC/`grub-mkrescue` aren't readily available on native Windows):
 
 - `nasm`
 - `gcc` with 32-bit (`-m32`) support (install the multilib package, e.g. `gcc-multilib` on Debian/Ubuntu)
