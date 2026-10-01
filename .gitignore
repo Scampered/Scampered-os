@@ -1,7 +1,5 @@
 build/
-iso/
 isofiles/
-rootfs/
 *.iso
-*.img
+disk.img
 qemu.log
